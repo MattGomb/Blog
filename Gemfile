@@ -64,5 +64,8 @@ group :development do
   # gem "spring"
 end
 
-
+# Help with hiding the password for example
 gem "dotenv-rails", "~> 2.8"
+
+# Rubocop
+gem 'rubocop', '>= 1.0', '< 2.0'
