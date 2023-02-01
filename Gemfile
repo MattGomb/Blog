@@ -71,5 +71,5 @@ gem 'dotenv-rails', '~> 2.8'
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Active record for migrations and data processing in models
-gem 'activerecord'
-gem 'standalone_migrations'
+# gem 'activerecord'
+# gem 'standalone_migrations'

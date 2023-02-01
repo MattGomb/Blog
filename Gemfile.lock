@@ -183,10 +183,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    standalone_migrations (7.1.0)
-      activerecord (>= 4.2.7, < 7.1.0, != 5.2.3.rc1, != 5.2.3)
-      railties (>= 4.2.7, < 7.1.0, != 5.2.3.rc1, != 5.2.3)
-      rake (>= 10.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
     thor (1.2.1)
@@ -214,7 +210,6 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  activerecord
   bootsnap
   debug
   dotenv-rails (~> 2.8)
@@ -225,7 +220,6 @@ DEPENDENCIES
   rails (~> 7.0.4, >= 7.0.4.2)
   rubocop (>= 1.0, < 2.0)
   sprockets-rails
-  standalone_migrations
   stimulus-rails
   turbo-rails
   tzinfo-data
