@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { in: 2..50 }
   validates :photo, presence: true
   validates :bio, presence: true, length: { in: 2..500 }
+  validates :posts_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # A method that returns the 3 most recent posts for a given user.
   def recent_posts
