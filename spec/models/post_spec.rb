@@ -13,6 +13,14 @@ RSpec.describe Post, type: :model do
     expect(subject).to be_an_instance_of(Post)
   end
 
+  it 'should test the posts_counter method' do
+    expect(@user.posts_counter).to eq(1)
+  end
+
+  it 'should test the recent_comments method' do
+    expect(subject.recent_comments).to eq([])
+  end
+
   # Tests for validations
   it 'is valid with valid attributes' do
     expect(subject).to be_valid

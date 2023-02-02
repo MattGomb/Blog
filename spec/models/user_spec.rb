@@ -9,6 +9,10 @@ RSpec.describe User, type: :model do
     expect(subject).to be_an_instance_of(User)
   end
 
+  it 'should test the recent_posts method' do
+    expect(subject.recent_posts).to eq([])
+  end
+
   # Tests for validations
   it 'is valid with valid attributes' do
     expect(subject).to be_valid

@@ -14,6 +14,10 @@ RSpec.describe Like, type: :model do
     expect(subject).to be_an_instance_of(Like)
   end
 
+  it 'should test the likes_counter method' do
+    expect(@post.likes_counter).to eq(5)
+  end
+
   # Tests for associations and connections
   describe 'the associations of a like' do
     it 'should belong to an author' do

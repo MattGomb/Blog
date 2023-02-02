@@ -14,6 +14,10 @@ RSpec.describe Comment, type: :model do
     expect(subject).to be_an_instance_of(Comment)
   end
 
+  it 'should test the comment_counter method' do
+    expect(@post.comments_counter).to eq(3)
+  end
+
   # Tests for validations
   it 'should be valid with valid attributes' do
     expect(subject).to be_valid
