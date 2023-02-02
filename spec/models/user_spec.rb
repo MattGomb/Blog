@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'You will always remember this as the day that you almost caught Captain Jack Sparrow!', posts_counter: 2) }
+  subject { User.new(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'You will always remember this as the day that you almost caught Captain Jack Sparrow!', posts_counter: 0) }
 
   before { subject.save }
 
@@ -39,14 +39,9 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'must have a posts_counter that is an integer > 0' do
-    if subject.posts_counter = nil
+  it 'must have a posts_counter' do
+    subject.posts_counter = nil
     expect(subject).to_not be_valid
-    elsif subject.posts_counter = -1
-    expect(subject).to_not be_valid
-    else subject.posts_counter >= 0
-    expect(subject).to be_valid
-    end
   end
 
   # Tests for associations

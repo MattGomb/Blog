@@ -3,9 +3,11 @@ class Post < ApplicationRecord
   has_many :comments, dependent: :destroy, foreign_key: :post_id
   has_many :likes, dependent: :destroy, foreign_key: :post_id
 
-  validates :title, presence: true, length: { maximum: 100 }
+  validates :title, presence: true, length: { minimum: 1, maximum: 250 }
   validates :text, presence: true, length: { maximum: 500 }
   validates :author, presence: true, length: { maximum: 50}
+  validates :likes_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+  validates :comments_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # A method that updates the posts counter for a user.
   def update_posts_counter

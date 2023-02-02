@@ -2,10 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Post, type: :model do
   before(:each) do
-    @user = User.new(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'I\'m Captain Jack Sparrow!')
+    @user = User.new(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'I\'m Captain Jack Sparrow!', posts_counter: 0)
   end
 
-  subject { Post.new(author: @user, title: 'The Black Pearl', text: 'What a ship, it was...') }
+  subject { Post.new(author: @user, title: 'The Black Pearl', text: 'What a ship, it was...', comments_counter: 0, likes_counter: 0) }
  
   before { subject.save }
 
@@ -21,7 +21,7 @@ RSpec.describe Post, type: :model do
   it 'is not valid without a title' do
     if subject.title = nil
     expect(subject).to_not be_valid
-    else subject.title = 'a' * 101
+    else subject.title = 'a' * 251
     expect(subject).to_not be_valid
     end
   end
@@ -40,6 +40,16 @@ RSpec.describe Post, type: :model do
     else subject.author = @user
     expect(subject).to be_valid
     end
+  end
+
+  it 'must have a likes_counter' do
+    subject.likes_counter = nil
+    expect(subject).to_not be_valid
+  end
+
+  it 'must have a comments_counter' do
+    subject.comments_counter = nil
+    expect(subject).to_not be_valid
   end
 
   # Tests for associations
