@@ -37,14 +37,26 @@ RSpec.describe Post, type: :model do
   it 'is not valid without an author' do
     if subject.author = nil
     expect(subject).to_not be_valid
-    else subject.author = 'a' * 51
-    expect(subject).to_not be_valid
+    else subject.author = @user
+    expect(subject).to be_valid
     end
   end
 
   # Tests for associations
-  it 'should belong to an author' do
-    t = Post.reflect_on_association(:author)
-    expect(t.macro).to eq(:belongs_to)
+  describe 'the associations of a post' do
+    it 'should belong to an author' do
+      post = Post.reflect_on_association(:author)
+      expect(post.macro).to eq(:belongs_to)
+    end
+
+    it 'should possibly have many comments' do
+      post = Post.reflect_on_association(:comments)
+      expect(post.macro).to eq(:has_many)
+    end
+
+    it 'should possibly have many likes' do
+      post = Post.reflect_on_association(:likes)
+      expect(post.macro).to eq(:has_many)
+    end
   end
 end

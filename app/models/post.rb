@@ -1,8 +1,11 @@
 class Post < ApplicationRecord
   belongs_to :author, class_name: 'User'
-
   has_many :comments, dependent: :destroy, foreign_key: :post_id
   has_many :likes, dependent: :destroy, foreign_key: :post_id
+
+  validates :title, presence: true, length: { maximum: 100 }
+  validates :text, presence: true, length: { maximum: 500 }
+  validates :author, presence: true, length: { maximum: 50}
 
   # A method that updates the posts counter for a user.
   def update_posts_counter
