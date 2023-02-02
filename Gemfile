@@ -53,9 +53,12 @@ group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
 end
 
-group :development do
+group :development, :test do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem 'web-console'
+
+  # Gem for testing
+  gem 'rspec-rails'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -69,7 +72,3 @@ gem 'dotenv-rails', '~> 2.8'
 
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
-
-# Active record for migrations and data processing in models
-# gem 'activerecord'
-# gem 'standalone_migrations'
