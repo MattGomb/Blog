@@ -38,4 +38,22 @@ RSpec.describe User, type: :model do
     subject.photo = nil
     expect(subject).to_not be_valid
   end
+
+  # Tests for associations
+  describe 'the associations of a user' do
+    it 'should possibly have many comments' do
+      u = User.reflect_on_association(:comments)
+      expect(u.macro).to eq(:has_many)
+    end
+
+    it 'should possibly have many likes' do
+      u = User.reflect_on_association(:likes)
+      expect(u.macro).to eq(:has_many)
+    end
+
+    it 'should possibly have many posts' do
+      u = User.reflect_on_association(:posts)
+      expect(u.macro).to eq(:has_many)
+    end
+  end
 end
