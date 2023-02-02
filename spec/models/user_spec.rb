@@ -18,23 +18,33 @@ RSpec.describe User, type: :model do
     expect(subject).to be_valid
   end
 
-  it 'is not valid without a proper-length name' do
-    if subject.name = nil
-    expect(subject).to_not be_valid
-    elsif subject.name = 'a'
-    expect(subject).to_not be_valid
-    else subject.name = 'a' * 51
-    expect(subject).to_not be_valid
+  describe 'the proper form of a name' do
+    it 'is not valid without a name' do
+      subject.name = nil
+      expect(subject).to_not be_valid
+    end
+    it 'is not valid with a name shorter than 2 characters' do
+      subject.name = 'a'
+      expect(subject).to_not be_valid
+    end
+    it 'is not valid with a name longer than 50 characters' do
+      subject.name = 'a' * 51
+      expect(subject).to_not be_valid
     end
   end
 
-  it 'is not valid without a proper-length bio' do
-    if subject.bio = nil
-    expect(subject).to_not be_valid
-    elsif subject.bio = 'a'
-    expect(subject).to_not be_valid
-    else subject.bio = 'a' * 501
-    expect(subject).to_not be_valid
+  describe 'the proper form of a bio' do
+    it 'is not valid without a bio' do
+      subject.bio = nil
+      expect(subject).to_not be_valid
+    end
+    it 'is not valid with a bio shorter than 2 characters' do
+      subject.bio = 'a'
+      expect(subject).to_not be_valid
+    end
+    it 'is not valid with a bio longer than 500 characters' do
+      subject.bio = 'a' * 501
+      expect(subject).to_not be_valid
     end
   end
 

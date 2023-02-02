@@ -2,8 +2,10 @@ require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
   before(:each) do
-    @user = User.new(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'I\'m Captain Jack Sparrow!', posts_counter: 2)
-    @post = Post.new(author: @user, title: 'The Black Pearl', text: 'What a ship..!', comments_counter: 2, likes_counter: 4)
+    @user = User.new(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                     bio: 'I\'m Captain Jack Sparrow!', posts_counter: 2)
+    @post = Post.new(author: @user, title: 'The Black Pearl',
+                     text: 'What a ship..!', comments_counter: 2, likes_counter: 4)
   end
 
   subject { Comment.new(author: @user, post: @post, text: 'I love this post!') }
@@ -37,7 +39,6 @@ RSpec.describe Comment, type: :model do
     subject.text = nil
     expect(subject).to_not be_valid
   end
-
 
   # Tests for associations
   describe 'the associations of a comnent' do
