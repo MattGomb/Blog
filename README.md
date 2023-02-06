@@ -56,7 +56,10 @@
 
 ### Key Features <a name="key-features"></a>
 
-**TBA**
+- [Data is processed in models]
+- [Users can register]
+- [Users can add posts]
+- [Users can like posts and add comments]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -103,7 +106,7 @@ To run the project, execute the following command:
 
 To run tests, run the following command:
 
-**TBA**
+`rspec`
 
 
 ### Deployment
@@ -128,7 +131,8 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-**TBA**
+- [improved user interface]
+- [reference posts]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
