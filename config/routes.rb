@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get "/users", to: "users#index"
 
   # Route to show a specific user
-  get "/users/:id", to: "users#show"
+  get "/users/:id", to: "users#show", as: "user"
 
   # Route to show all posts of a specific user
-  get "/users/:user_id/posts", to: "posts#index"
+  get "/users/:user_id/posts", to: "posts#index", as: "user_posts"
 
   # Route to show a specific post of a specific user
-  get "/users/:user_id/posts/:id", to: "posts#show"
+  get "/users/:user_id/posts/:id", to: "posts#show", as: "user_post"
 end
