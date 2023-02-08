@@ -1,13 +1,14 @@
 <%= render partial: "shared/user", locals: { user: @user } %>
-  <p>Bio</p>
+<div class="user-bio"> 
+  <h3>Bio</h3>
   <p><%= @user.bio %>
 </div>
-<div>
+<div class="user-allposts">
   <% @user.posts.each do |post| %>
-    <div>
-      <p><%= post.title %></p>
+    <div class="user-post">
+      <h3><%= post.title %></h3>
       <p><%= post.text %></p>
-      <div>
+      <div class="user-postdata">
         <p>Comments: <%= post.comments_counter %></p>
         <p>Likes: <%= post.likes_counter %></p>
       </div>
