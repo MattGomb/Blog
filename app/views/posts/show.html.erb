@@ -26,4 +26,6 @@
         </div>
     <% end %> 
   </div>
+  <h3>Add new Comment:</h3>
+  <%= render partial: "comments/comment", locals: { post: @post, user: @user } %>
 </div>
