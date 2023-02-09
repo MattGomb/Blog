@@ -8,4 +8,12 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find(@post.author_id)
   end
+
+  def new
+    post = Post.new
+  end
+
+  def create
+    
+  end
 end
