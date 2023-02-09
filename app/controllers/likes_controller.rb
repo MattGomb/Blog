@@ -7,11 +7,11 @@ class LikesController < ApplicationController
     like.post = @post
 
     if like.save
-      flash[:success] = "Like created successfully"
+      flash[:success] = 'Like created successfully'
       redirect_to user_post_path(@user.id, @post.id)
     else
-      flash.now[:error] = "Error: Like could not be created"
-      render :new, locals: { like: like }
+      flash.now[:error] = 'Error: Like could not be created'
+      render :new, locals: { like: }
     end
   end
 end
