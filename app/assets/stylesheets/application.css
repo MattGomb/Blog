@@ -108,6 +108,7 @@ a {
   gap: 1rem;
   text-align: justify;
   padding: 0 1rem;
+  width: 100%;
 }
 
 .post-detailed {
@@ -203,4 +204,8 @@ a {
   border: 1px solid black;
   border-radius: 0.25rem;
   text-decoration: none;
+}
+
+.success {
+  color: green;
 }
