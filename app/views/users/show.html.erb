@@ -7,6 +7,7 @@
   <% @user.recent_posts.each do |post| %>
     <div class="user-post">
       <h3><%= post.title %></h3>
+      <span class="title-date"><%= post.created_at.strftime('%F %T') %></span>
       <p><%= post.text %></p>
       <div class="user-postdata">
         <p>Comments: <%= post.comments_counter %></p>
