@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show] do
     # Route to show all posts of a specific user
     # Route to show a specific post of a specific user
-    resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :new, :create, :show] do
+      resources :comments, only: [:new, :create]
+      resources :likes, only: [:create]
+    end
   end
 end
