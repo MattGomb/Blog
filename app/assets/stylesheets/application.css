@@ -143,3 +143,14 @@ body {
 .postdetail-post {
   margin-bottom: 1rem;
 }
+
+.btn-allposts {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(190, 190, 190);
+  margin: auto;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}

@@ -4,7 +4,7 @@
   <p><%= @user.bio %>
 </div>
 <div class="user-allposts">
-  <% @user.posts.each do |post| %>
+  <% @user.recent_posts.each do |post| %>
     <div class="user-post">
       <h3><%= post.title %></h3>
       <p><%= post.text %></p>
@@ -14,4 +14,5 @@
       </div>
     </div>
   <% end %>
+  <%= link_to 'See all posts', user_posts_path(@user), class: "btn-allposts"%>
 </div>
