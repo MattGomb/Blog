@@ -19,4 +19,11 @@ class CommentsController < ApplicationController
       render :new, locals: { comment: @comment }
     end
   end
+
+  private
+  
+  def comment_params
+    params.require(:comment).permit(:text)
+    
+  end
 end
