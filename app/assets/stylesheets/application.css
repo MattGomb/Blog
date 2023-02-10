@@ -143,15 +143,15 @@ a {
   font-weight: bold;
 }
 
-#post_text, #post_title {
+#post_text,
+#post_title {
   border: 1px solid gray;
   border-radius: 0.25rem;
   padding: 0.5rem;
   width: 400px;
 }
 
-#post_text:focus
-{
+#post_text:focus {
   height: 500px;
   overflow-wrap: break-word;
 }
@@ -330,9 +330,11 @@ a {
   0% {
     opacity: 1;
   }
+
   50% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }
