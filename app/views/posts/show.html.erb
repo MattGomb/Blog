@@ -1,3 +1,4 @@
+<%= render 'shared/flashes' %>
 <div class="postdetail-container">
   <div class="postdetail">
     <div class="postdetail-head">
@@ -19,14 +20,13 @@
         <div class="comment">
           <div class="comment-body">
             #<%= counter += 1 %>
-            <p><%= user.name %>:</p>
-            <p><%= comment.text %></p>
+            <p class="comment-name"><%= user.name %>:</p>
+            <p class="comment-text"><%= comment.text %></p>
           </div>
           <span class="comment-date"><%= comment.created_at.strftime('%F %T') %></span>
         </div>
     <% end %> 
   </div>
   <%= render partial: "likes/like", locals: { post: @post, user: @user } %>
-  <h3>Add new Comment:</h3>
   <%= render partial: "comments/comment", locals: { post: @post, user: @user } %>
 </div>

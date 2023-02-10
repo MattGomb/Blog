@@ -1,12 +1,15 @@
+<%= render 'shared/flashes' %>
+<div class="post-new">
 <h1>New Post</h1>
-<%= form_with model: post, url: user_posts_path, method: :post, local: true do |f| %>
+<%= form_with model: post, url: user_posts_path, method: :post, local: true, class: "post-form" do |f| %>
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title, class: "label" %>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :text %><br>
+    <%= f.label :text, class: "label" %>
     <%= f.text_field :text %>
   </div>
-  <%= f.submit "Create Post" %>
+  <%= f.submit "Create Post", class: "postcreate-btn btn" %>
 <% end %>
+</div>
