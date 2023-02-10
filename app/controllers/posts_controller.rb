@@ -26,7 +26,7 @@ class PostsController < ApplicationController
           redirect_to user_posts_path(current_user.id)
         else
           flash.now[:error] = 'Error: Post could not be created'
-          render :new, locals: { post: }
+          render :new, status: :unprocessable_entity, locals: { post: }
         end
       end
     end

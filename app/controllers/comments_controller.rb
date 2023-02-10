@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
       redirect_to user_post_path(@user.id, @post.id)
     else
       flash.now[:error] = 'Error: Comment could not be created'
-      render :_comment, locals: { comment: @comment }
+      render :_comment, status: :unprocessable_entity, locals: { comment: @comment }
     end
   end
 
