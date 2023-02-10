@@ -1,3 +1,4 @@
+<%= render 'shared/flashes' %>
 <%= render partial: "shared/user", locals: { user: @user } %>
 <button class="newpost-btn">
   <%= link_to 'New Post', new_user_post_path(@user.id) %>
