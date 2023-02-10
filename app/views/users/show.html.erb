@@ -1,6 +1,6 @@
 <%= render 'shared/flashes' %>
 <%= render partial: "shared/user", locals: { user: @user } %>
-<button class="newpost-btn">
+<button class="newpost-btn btn">
   <%= link_to 'New Post', new_user_post_path(@user.id) %>
 </button>
 <div class="user-bio"> 
@@ -19,5 +19,5 @@
       </div>
     </div>
   <% end %>
-  <%= link_to 'See all posts', user_posts_path(@user), class: "btn-allposts"%>
+  <%= link_to 'See all posts', user_posts_path(@user), class: "btn-allposts btn"%>
 </div>
