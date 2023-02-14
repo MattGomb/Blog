@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User index', type: :system do
+RSpec.describe 'user index page', type: :system do
   before(:each) do
     @user = User.create(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'I\'m Captain Jack Sparrow!', posts_counter: 0)
   end
