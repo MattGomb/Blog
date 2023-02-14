@@ -2,9 +2,12 @@ require 'rails_helper'
 
 RSpec.describe 'post show page', type: :system do
   before(:each) do
-    @user = User.create(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'I\'m Captain Jack Sparrow!', posts_counter: 1)
-    @user2 = User.create(name: 'Will Turner', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'I\'m Will Turner!', posts_counter: 0)
-    @post = Post.create(title: 'First Post', author: @user, text: 'I\'m the first post!', likes_counter: 0, comments_counter: 6)
+    @user = User.create(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                        bio: 'I\'m Captain Jack Sparrow!', posts_counter: 1)
+    @user2 = User.create(name: 'Will Turner', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                         bio: 'I\'m Will Turner!', posts_counter: 0)
+    @post = Post.create(title: 'First Post', author: @user, text: 'I\'m the first post!',
+                        likes_counter: 0, comments_counter: 6)
     @comment = Comment.create(text: 'I\'m a comment!', author: @user, post: @post)
     @comment = Comment.create(text: 'I\'m a comment!', author: @user2, post: @post)
     @comment = Comment.create(text: 'I\'m a comment!', author: @user, post: @post)
@@ -46,7 +49,7 @@ RSpec.describe 'post show page', type: :system do
 
     it 'shows all the comments' do
       visit user_post_path(@user, @post)
-      expect(page).to have_content(@comment.text, :count => 6)
+      expect(page).to have_content(@comment.text, count: 6)
     end
   end
 end

@@ -2,12 +2,18 @@ require 'rails_helper'
 
 RSpec.describe 'user show page', type: :system do
   before(:each) do
-    @user = User.create(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'I\'m Captain Jack Sparrow!', posts_counter: 0)
-    @post1 = Post.create(title: 'First Post', author: @user, text: 'I\'m the first post!', likes_counter: 0, comments_counter: 0)
-    @post2 = Post.create(title: 'Second Post', author: @user, text: 'I\'m the 2nd post!', likes_counter: 0, comments_counter: 0)
-    @post3 = Post.create(title: 'Third Post', author: @user, text: 'I\'m the 3rd post!', likes_counter: 0, comments_counter: 0)
-    @post4 = Post.create(title: 'Fourth Post', author: @user, text: 'I\'m the 4th post!', likes_counter: 0, comments_counter: 0)
-    @post5 = Post.create(title: 'Fifth Post', author: @user, text: 'I\'m the 5th post!', likes_counter: 0, comments_counter: 0)
+    @user = User.create(name: 'Jack Sparrow', photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
+                        bio: 'I\'m Captain Jack Sparrow!', posts_counter: 0)
+    @post1 = Post.create(title: 'First Post', author: @user, text: 'I\'m the first post!',
+                         likes_counter: 0, comments_counter: 0)
+    @post2 = Post.create(title: 'Second Post', author: @user, text: 'I\'m the 2nd post!',
+                         likes_counter: 0, comments_counter: 0)
+    @post3 = Post.create(title: 'Third Post', author: @user, text: 'I\'m the 3rd post!',
+                         likes_counter: 0, comments_counter: 0)
+    @post4 = Post.create(title: 'Fourth Post', author: @user, text: 'I\'m the 4th post!',
+                         likes_counter: 0, comments_counter: 0)
+    @post5 = Post.create(title: 'Fifth Post', author: @user, text: 'I\'m the 5th post!',
+                         likes_counter: 0, comments_counter: 0)
   end
 
   describe 'show page for users' do
@@ -33,9 +39,9 @@ RSpec.describe 'user show page', type: :system do
 
     it 'shows the first 3 posts of the user' do
       visit user_path(@user)
-      expect(page).to have_css("h3", :maximum => 3)
+      expect(page).to have_css('h3', maximum: 3)
     end
-    
+
     it 'shows the see all posts button' do
       visit user_path(@user)
       expect(page).to have_content('See all posts')
