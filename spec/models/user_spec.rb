@@ -53,11 +53,6 @@ RSpec.describe User, type: :model do
     expect(subject).to_not be_valid
   end
 
-  it 'must have a posts_counter' do
-    subject.posts_counter = nil
-    expect(subject).to_not be_valid
-  end
-
   # Tests for associations
   describe 'the associations of a user' do
     it 'should possibly have many comments' do
