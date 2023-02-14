@@ -1,8 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe 'Posts', type: :request do
+  before(:each) do
+    @user = User.create(name: 'test', bio: 'bio', photo: 'photo')
+    @post = Post.create(author: @user, title: 'title', text: 'text')
+  end
   describe 'GET #index' do
-    before(:each) { get '/users/:id/posts' }
+    before(:each) { get "/users/#{@user.id}/posts" }
 
     it 'returns http success' do
       expect(response).to have_http_status(:success)
@@ -11,14 +15,10 @@ RSpec.describe 'Posts', type: :request do
     it 'renders the index template' do
       expect(response).to render_template(:index)
     end
-
-    it 'returns the correct placeholder text' do
-      expect(response.body).to include('Here is a list of posts for a given user')
-    end
   end
 
   describe 'GET #show' do
-    before(:each) { get '/users/:user_id/posts/:id' }
+    before(:each) { get "/users/#{@user.id}/posts/#{@post.id}" }
 
     it 'returns http success' do
       expect(response).to have_http_status(:success)
@@ -26,10 +26,6 @@ RSpec.describe 'Posts', type: :request do
 
     it 'renders the index template' do
       expect(response).to render_template(:show)
-    end
-
-    it 'returns the correct placeholder text' do
-      expect(response.body).to include('Here is a specific post of a given user')
     end
   end
 end
