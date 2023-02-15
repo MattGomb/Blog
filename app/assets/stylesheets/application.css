@@ -312,7 +312,8 @@ a {
   opacity: 0;
 }
 
-.flash-error {
+.flash-error,
+.flash-alert {
   position: absolute;
   left: 0;
   right: 0;
@@ -348,4 +349,71 @@ a {
 
 .btn:active {
   transform: translateY(1px);
+}
+
+.flash-notice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 1rem;
+  background-color: orange;
+  color: black;
+  border-radius: 0 0 2rem 2rem;
+  width: fit-content;
+  animation: fadeout 4s;
+  opacity: 0;
+}
+
+.field {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.container-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+#new_user {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions,
+.actions a {
+  margin: 0.5rem 0;
+}
+
+.rem-field {
+  padding: 0.5rem;
+}
+
+.login-btn,
+.signup-btn,
+.forget-btn,
+.reset-btn,
+.conf-btn {
+  background-color: rgb(230, 230, 230);
+  width: fit-content;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+#user_email,
+#user_password,
+#user_password_confirmation,
+.form-control {
+  border: gray 2px solid;
+  padding: 0.5rem;
 }
