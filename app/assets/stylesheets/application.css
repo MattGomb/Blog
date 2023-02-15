@@ -372,12 +372,7 @@ a {
   width: fit-content;
 }
 
-.new-user-form {
-  margin: 1rem;
-}
-
-.new-user,
-.new-user-form {
+.container-b {
   margin: 1rem;
 }
 
@@ -398,6 +393,7 @@ a {
 .login-btn,
 .signup-btn,
 .forget-btn,
+.reset-btn,
 .conf-btn {
   background-color: rgb(230, 230, 230);
   width: fit-content;
@@ -406,4 +402,12 @@ a {
   border-radius: 0.25rem;
   text-decoration: none;
   font-size: 12px;
+}
+
+#user_email,
+#user_password,
+#user_password_confirmation,
+.form-control {
+  border: gray 2px solid;
+  padding: 0.5rem;
 }
