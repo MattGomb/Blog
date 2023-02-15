@@ -349,3 +349,42 @@ a {
 .btn:active {
   transform: translateY(1px);
 }
+
+.flash-notice {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 1rem;
+  background-color: orange;
+  color: black;
+  border-radius: 0 0 2rem 2rem;
+  width: fit-content;
+  animation: fadeout 4s;
+  opacity: 0;
+}
+
+.field {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: fit-content;
+}
+
+.new-user-form, .actions {
+  margin: 1rem;
+}
+
+.actions a {
+  margin: 0.5rem 0;
+}
+
+.rem-field {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
