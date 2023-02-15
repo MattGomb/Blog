@@ -78,3 +78,6 @@ gem 'dotenv-rails', '~> 2.8'
 
 # Rubocop
 gem 'rubocop', '>= 1.0', '< 2.0'
+
+# Devise gem for authentication
+gem 'devise'
