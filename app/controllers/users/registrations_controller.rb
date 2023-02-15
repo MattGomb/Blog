@@ -41,6 +41,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[name photo bio])
+    flash[:notice] = 'Please check your terminal for instructions.'
+    redirect_to new_session_path(resource_name)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
