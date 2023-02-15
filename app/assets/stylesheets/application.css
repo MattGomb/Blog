@@ -372,11 +372,16 @@ a {
   width: fit-content;
 }
 
-.new-user-form,
-.actions {
+.new-user-form {
   margin: 1rem;
 }
 
+.new-user,
+.new-user-form {
+  margin: 1rem;
+}
+
+.actions,
 .actions a {
   margin: 0.5rem 0;
 }
@@ -388,4 +393,17 @@ a {
   align-items: flex-start;
   gap: 0.5rem;
   padding: 0.5rem;
+}
+
+.login-btn,
+.signup-btn,
+.forget-btn,
+.conf-btn {
+  background-color: rgb(230, 230, 230);
+  width: fit-content;
+  padding: 0.5rem;
+  border: 1px solid black;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-size: 12px;
 }
