@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show] do
     # Route to show all posts of a specific user
     # Route to show a specific post of a specific user
-    resources :posts, only: %i[index new create show] do
-      resources :comments, only: %i[new create]
+    resources :posts, only: %i[index new create show destroy] do
+      resources :comments, only: %i[new create destroy]
       resources :likes, only: [:create]
     end
   end
