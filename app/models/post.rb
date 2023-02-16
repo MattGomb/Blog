@@ -10,11 +10,12 @@ class Post < ApplicationRecord
   validates :comments_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # A method that updates the posts counter for a user.
-  def update_posts_counter
-    author.increment!(:posts_counter)
-  end
 
-  after_save :update_posts_counter
+  def update_posts_counter(user_id)
+    user = User.find(user_id)
+    counter = user.posts.count
+    user.update(posts_counter: counter)
+  end
 
   # A method which returns the 5 most recent comments for a given post.
   def recent_comments
@@ -27,6 +28,6 @@ class Post < ApplicationRecord
 
   def set_defaults
     self.likes_counter = 0
-    self.comments_counter = 0
+    self.comments_counter ||= 0
   end
 end

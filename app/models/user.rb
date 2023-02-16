@@ -13,6 +13,7 @@ class User < ApplicationRecord
   validates :posts_counter, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   # A method that returns the 3 most recent posts for a given user.
+
   def recent_posts
     posts.order(created_at: :desc).limit(3).reverse
   end
@@ -32,6 +33,7 @@ class User < ApplicationRecord
   private
 
   def set_defaults
-    self.posts_counter = 0
+    self.posts_counter ||= 0
+    self.role ||= 'default'
   end
 end
