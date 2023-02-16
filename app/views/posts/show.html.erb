@@ -9,7 +9,7 @@
         <p>Likes: <%= @post.likes_counter%></p>
       </div>
       <div class="delete-post">
-        <% if can? :destroy, Post  %>
+        <% if can? :destroy, @post  %>
           <%= button_to "Delete Post", { action: "destroy", id: @post.id },
                                 method: :delete %>
         <% end  %>
