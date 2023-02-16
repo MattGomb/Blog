@@ -1,4 +1,3 @@
-<%= render 'shared/flashes' %>
 <%= form_with model: Comment, url: user_post_comments_path(@user.id, @post.id), method: :post, local: true do |f| %>
   <div class="comment-new">
     <h3>Add a new Comment:</h3>
