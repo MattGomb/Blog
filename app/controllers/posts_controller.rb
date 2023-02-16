@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     respond_to do |f|
       f.html do
         if post.save
-          Post.update_posts_counter(current_user.id)
+          post.update_posts_counter(current_user.id)
           flash[:success] = 'Post created successfully'
           redirect_to user_posts_path(current_user.id)
         else
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
     respond_to do |f|
       f.html do
         if post.destroy
-          Post.update_posts_counter(params[:user_id])
+          post.update_posts_counter(params[:user_id])
           flash[:success] = 'Post deleted successfully'
           redirect_to user_posts_path(params[:user_id])
         else

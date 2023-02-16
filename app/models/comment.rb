@@ -7,9 +7,9 @@ class Comment < ApplicationRecord
   validates :text, presence: true, length: { maximum: 150 }
 
   # A method that updates the comments counter for a post.
-  def update_comments_counter
-    post.increment!(:comments_counter)
+  def update_comments_counter(id)
+    post = Post.find(id)
+    counter = post.comments.count
+    post.update(comments_counter: counter)
   end
-
-  after_save :update_comments_counter
 end
