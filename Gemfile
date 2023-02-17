@@ -84,3 +84,6 @@ gem 'devise'
 
 # Cancancan for authorization
 gem 'cancancan'
+
+# jwt for api authentication
+gem 'jwt'
