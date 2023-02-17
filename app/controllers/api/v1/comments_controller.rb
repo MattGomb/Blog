@@ -1,8 +1,9 @@
 class Api::V1::CommentsController < ApiController
+  before_action :authorize_request
+
   def index
     @post = Post.find(params[:post_id])
     @comments = @post.comments.order(created_at: :desc)
-
     render json: @comments
   end
 
