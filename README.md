@@ -79,34 +79,94 @@ To get a local copy up and running, follow these steps.
 In order to run this project you need:
 ruby version 2.7.0+
 rails version 7+
+PostgreSQL
 
 ### Setup
 
 Clone this repository to your desired folder:
 
-`https://github.com/MattGomb/Blog.git`
+```
+https://github.com/MattGomb/Blog.git
+```
 
-`cd Blog`
+```
+cd Blog
+```
 
 
 ### Install
 
 Install this project with:
 
-  `bundle install`
+  ```
+  bundle install
+  ```
 
 
 ### Usage
 
-To run the project, execute the following command:
+This app uses postgreSQL databases for data preservation. Please provide valid credentials in a `.env` file and place it in the root folder.<br><br>
+To initialize database run:<br>
+```
+rails db:create
+```
+```
+rails db:migrate
+```
 
-`rails s` or `rails server`
+To run the server, execute the following command:
+```
+rails s` or `rails server
+```
+this will start the server on http://localhost:3000/
+
+To use the features of the app, you'll have to sign up using:
+
+http://127.0.0.1:3000/users/sign_up
+
+Once you sign up, you can log in from:
+
+http://127.0.0.1:3000/users/sign_in
+
+For API log in:
+
+http://127.0.0.1:3000/api/v1/login
+
+you ned to suply your email and pasword using JSON format in the body of the request as follows:
+
+```
+{
+  "email": "your_mail@mail.com",
+  "password": "yourpassword"
+ }
+ ```
+ 
+ In the response of the request you will recieve a token that you will need to copy and will have 24 hours of validity. Please provide your token in the `Authorization` header of subsequent requests.
+ 
+ To list posts for a specific user in JSON format:
+ 
+ http://127.0.0.1:3000/api/v1/users/:user_id/posts
+ 
+ To list comments for a post in JSON format:
+ 
+ http://127.0.0.1:3000/api/v1/users/:user_id/posts/:post_id/comments
+ 
+ Use this last endpoint with POST method to create comments for a post. Provide the text of the comment in JSON format as follows:
+ 
+ ```
+ {
+   "text": "your comment"
+  }
+  ```
+ 
 
 ### Run tests
 
 To run tests, run the following command:
 
-`rspec`
+```
+rspec
+```
 
 
 ### Deployment
@@ -126,6 +186,11 @@ You can deploy this project using:
 - GitHub: [@MattGomb](https://github.com/MattGomb)
 - Twitter: [@MtysGombos1](https://twitter.com/MtysGombos1)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/gombos-matyas/)
+
+👤 **Felipe Oyarzo**
+
+- GitHub: [@jfoyarzo](https://github.com/jfoyarzo)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/jorge-felipe-oyarzo-contreras)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
