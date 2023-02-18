@@ -140,7 +140,7 @@ you ned to suply your email and pasword using JSON format in the body of the req
  Use this last endpoint with POST method to create comments for a post. Provide the text of the comment in JSON format as follows:
  
  `{
-   "text" "your comment"
+   "text": "your comment"
   }`
  
 
