@@ -85,27 +85,39 @@ PostgreSQL
 
 Clone this repository to your desired folder:
 
-`https://github.com/MattGomb/Blog.git`
+```
+https://github.com/MattGomb/Blog.git
+```
 
-`cd Blog`
+```
+cd Blog
+```
 
 
 ### Install
 
 Install this project with:
 
-  `bundle install`
+  ```
+  bundle install
+  ```
 
 
 ### Usage
 
 This app uses postgreSQL databases for data preservation. Please provide valid credentials in a `.env` file and place it in the root folder.<br><br>
 To initialize database run:<br>
-`rails db:create`
-`rails db:migrate`<br>
+```
+rails db:create
+```
+```
+rails db:migrate
+```
 
 To run the server, execute the following command:
-`rails s` or `rails server`<br><br>
+```
+rails s` or `rails server
+```
 this will start the server on http://localhost:3000/
 
 To use the features of the app, you'll have to sign up using:
@@ -122,10 +134,12 @@ http://127.0.0.1:3000/api/v1/login
 
 you ned to suply your email and pasword using JSON format in the body of the request as follows:
 
-`{
+```
+{
   "email": "your_mail@mail.com",
   "password": "yourpassword"
- }`
+ }
+ ```
  
  In the response of the request you will recieve a token that you will need to copy and will have 24 hours of validity. Please provide your token in the `Authorization` header of subsequent requests.
  
@@ -139,16 +153,20 @@ you ned to suply your email and pasword using JSON format in the body of the req
  
  Use this last endpoint with POST method to create comments for a post. Provide the text of the comment in JSON format as follows:
  
- `{
+ ```
+ {
    "text": "your comment"
-  }`
+  }
+  ```
  
 
 ### Run tests
 
 To run tests, run the following command:
 
-`rspec`
+```
+rspec
+```
 
 
 ### Deployment
